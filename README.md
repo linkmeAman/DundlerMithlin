@@ -36,15 +36,23 @@ Modern, dark-mode portfolio for Aman Singh, a backend engineer focused on Go, PH
 ### Detailed Vercel Deployment Guide
 | Step | Action |
 | --- | --- |
-| 1 | Ensure you can build locally: `npm install && npm run build`. This generates the static files in `/out`. |
+| 1 | Ensure you can build locally: 
+pm install && npm run build. This generates the static files in /out. |
 | 2 | Commit all changes and push to a Git provider (GitHub/GitLab/Bitbucket). Vercel reads the repository to build the site. |
 | 3 | In the Vercel dashboard click **New Project → Import Git Repository**, select this repo, and continue. |
-| 4 | On the configuration screen set `Framework` to **Next.js**, `Build Command` to `npm run build`, and `Output Directory` to `out`. This matches the `vercel.json` already checked in. |
+| 4 | On the configuration screen choose **Other / Static Site** so Vercel honors the included ercel.json (which uses @vercel/static-build and distDir: out). Leave the Build Command as 
+pm run build and Output Directory as out. |
 | 5 | Environment variables: none are required. Leave the list empty. |
-| 6 | Click **Deploy**. Vercel installs dependencies, runs `npm run build`, and uploads the `out/` directory as static assets. |
-| 7 | After the first build, copy the generated `.vercel.app` URL or attach a custom domain under the **Domains** tab. |
-| 8 | For subsequent deployments, push to `main` (or the branch you connected). Vercel automatically rebuilds. For previews, open a PR; Vercel creates per-branch preview URLs. |
-| 9 | Optional CLI deploy: run `npm install -g vercel`, authenticate with `vercel login`, then run `vercel --prod` from the repo root. The CLI respects the same `vercel.json` file and uses the `out/` export. |
+| 6 | Click **Deploy**. Vercel installs dependencies, runs 
+pm run build, and uploads the out/ directory as static assets. |
+| 7 | After the first build, copy the generated .vercel.app URL or attach a custom domain under the **Domains** tab. |
+| 8 | For subsequent deployments, push to main (or the branch you connected). Vercel automatically rebuilds. For previews, open a PR; Vercel creates per-branch preview URLs. |
+| 9 | Optional CLI deploy: run 
+pm install -g vercel, authenticate with ercel login, then run ercel --prod from the repo root. The CLI respects the same ercel.json file and uses the out/ export. |
+
+### Troubleshooting
+- **
+outes-manifest.json missing:** This means Vercel tried to treat the project as a standard Next.js server build. Ensure your project is using the provided ercel.json (static build) by selecting **Other / Static Site** in the Vercel project settings before redeploying.
 
 ## Editing Content
 All copy lives in a few small data files so you never have to dig through components:
