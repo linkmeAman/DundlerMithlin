@@ -12,7 +12,7 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { SkillPill } from "@/components/SkillPill";
 import { ContactPanel } from "@/components/ContactPanel";
 import { Reveal } from "@/components/Reveal";
-import { ReactBitsShowcase } from "@/components/ReactBitsShowcase";
+import { SpotlightShowcase } from "@/components/SpotlightShowcase";
 
 export default function Home() {
   const featureProjects = projects.slice(0, 3);
@@ -49,14 +49,6 @@ export default function Home() {
           ))}
         </div>
       </Section>
-      <Section id="react-bits">
-        <SectionHeader
-          eyebrow="React Bits"
-          title="Micro-interactions inspired by the React Bits spotlight grid."
-          description="A living playground of spotlight-style cards used to narrate automation lifts, latency wins, and messaging throughput."
-        />
-        <ReactBitsShowcase />
-      </Section>
       <Section id="skills">
         <SectionHeader
           eyebrow="Skills"
@@ -79,6 +71,14 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </Section>
+      <Section id="spotlight">
+        <SectionHeader
+          eyebrow="Spotlight"
+          title="Magnetic cards showing the stories behind automation, latency, and messaging."
+          description="Micro-interaction cards inspired by high-polish UI references to keep the page feeling alive."
+        />
+        <SpotlightShowcase />
       </Section>
       <Section id="education">
         <SectionHeader

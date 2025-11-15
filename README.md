@@ -36,23 +36,18 @@ Modern, dark-mode portfolio for Aman Singh, a backend engineer focused on Go, PH
 ### Detailed Vercel Deployment Guide
 | Step | Action |
 | --- | --- |
-| 1 | Ensure you can build locally: 
-pm install && npm run build. This generates the static files in /out. |
+| 1 | Ensure you can build locally: `npm install && npm run build`. This generates the static files in `/out`. |
 | 2 | Commit all changes and push to a Git provider (GitHub/GitLab/Bitbucket). Vercel reads the repository to build the site. |
 | 3 | In the Vercel dashboard click **New Project → Import Git Repository**, select this repo, and continue. |
-| 4 | On the configuration screen choose **Other / Static Site** so Vercel honors the included ercel.json (which uses @vercel/static-build and distDir: out). Leave the Build Command as 
-pm run build and Output Directory as out. |
+| 4 | On the configuration screen choose **Other / Static Site** so Vercel honors the included `vercel.json` (which uses `@vercel/static-build` and `distDir: out`). Leave the `Build Command` as `npm run build` and `Output Directory` as `out`. |
 | 5 | Environment variables: none are required. Leave the list empty. |
-| 6 | Click **Deploy**. Vercel installs dependencies, runs 
-pm run build, and uploads the out/ directory as static assets. |
-| 7 | After the first build, copy the generated .vercel.app URL or attach a custom domain under the **Domains** tab. |
-| 8 | For subsequent deployments, push to main (or the branch you connected). Vercel automatically rebuilds. For previews, open a PR; Vercel creates per-branch preview URLs. |
-| 9 | Optional CLI deploy: run 
-pm install -g vercel, authenticate with ercel login, then run ercel --prod from the repo root. The CLI respects the same ercel.json file and uses the out/ export. |
+| 6 | Click **Deploy**. Vercel installs dependencies, runs `npm run build`, and uploads the `out/` directory as static assets. |
+| 7 | After the first build, copy the generated `.vercel.app` URL or attach a custom domain under the **Domains** tab. |
+| 8 | For subsequent deployments, push to `main` (or the branch you connected). Vercel automatically rebuilds. For previews, open a PR; Vercel creates per-branch preview URLs. |
+| 9 | Optional CLI deploy: run `npm install -g vercel`, authenticate with `vercel login`, then run `vercel --prod` from the repo root. The CLI respects the same `vercel.json` file and uses the `out/` export. |
 
 ### Troubleshooting
-- **
-outes-manifest.json missing:** This means Vercel tried to treat the project as a standard Next.js server build. Ensure your project is using the provided ercel.json (static build) by selecting **Other / Static Site** in the Vercel project settings before redeploying.
+- **`routes-manifest.json` missing:** This means Vercel tried to treat the project as a standard Next.js server build. Ensure your project is using the provided `vercel.json` (static build) by selecting **Other / Static Site** in the Vercel project settings before redeploying.
 
 ## Editing Content
 All copy lives in a few small data files so you never have to dig through components:
@@ -63,7 +58,7 @@ All copy lives in a few small data files so you never have to dig through compon
 | Navigation links (header + mobile) | `src/data/navigation.ts` | Add/remove entries to expose new sections or external URLs. |
 | Experience timeline bullets | `src/data/experience.ts` | Each `achievement` is icon + metric copy. |
 | Project cards & case-study details | `src/data/projects.ts` | Add new entries; slugs power future dynamic routes. |
-| React Bits spotlight cards | `src/data/reactBits.ts` | Powers the interactive showcase that mimics React Bits spotlight UI. |
+| Spotlight cards (magnetic effect) | `src/data/spotlight.ts` | Update card copy/metrics for the hover showcase. |
 | Skill groups / badges | `src/data/skills.ts` | Group labels double as section headers. |
 | Education & certifications | `src/data/education.ts` | Add more degrees or credentials as needed. |
 
@@ -73,9 +68,9 @@ After editing data, rerun `npm run dev` (or refresh) to see updates instantly.
 - **Hero CTA + Resume:** Replace the PDF at `public/amansingh.pdf` and set `profile.contact.resumeUrl` (and `profile.contact.gmailComposeUrl` if you prefer a different compose provider). The CTA opens in a new tab.
 - **Profile photo:** Swap `public/profile-photo.jpeg` with your image and adjust `profile.photo` (src + alt text). The hero uses `next/image` so larger files are optimized automatically.
 - **Stats with counters:** Each stat in `profile.stats` accepts `numericValue`, `prefix`, `suffix`, and `decimals`. Add entries to animate more KPIs via the shared `AnimatedNumber` component.
-- **React Bits spotlight:** Edit `src/data/reactBits.ts` to change the interactive cards or add more. The spotlight hover effect automatically adapts to new entries.
 - **Navigation:** Update `src/data/navigation.ts` to add items that point to new sections, external case studies, or a blog. External links open in a new tab automatically.
 - **Sections:** Home sections are regular React components. Drop in new sections inside `src/app/page.tsx` and source copy from new data files (e.g., `src/data/testimonials.ts`).
+- **Spotlight cards:** Edit `src/data/spotlight.ts` to change the text/metrics powering the magnetic hover cards. Styling lives in `src/components/SpotlightShowcase.tsx`.
 - **Projects page:** The filter chips auto-populate from each project's `stack` array. Adding a new tag automatically becomes selectable.
 - **Animations:** `Reveal` and `AnimatedNumber` handle framer-motion effects. Duplicate these patterns for other components to keep motion consistent.
 
