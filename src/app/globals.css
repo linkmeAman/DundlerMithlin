@@ -1,26 +1,69 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
+  --background: #010409;
+  --surface: #030712;
+  --surface-2: #0f172a;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --accent: #22d3ee;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--surface);
+  --color-foreground: var(--text);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), "Inter", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(34, 211, 238, 0.07),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 0%,
+      rgba(14, 165, 233, 0.08),
+      transparent 40%
+    ),
+    var(--surface);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.35);
+  color: #020617;
+}
+
+.noise-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='600' height='600' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  opacity: 0.35;
+}
+
+.fluid-display {
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.fluid-lead {
+  font-size: clamp(1rem, 2.6vw, 1.35rem);
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.panel-rounded {
+  border-radius: clamp(1.25rem, 4vw, 2rem);
 }
