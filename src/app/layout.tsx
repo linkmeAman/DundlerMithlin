@@ -21,19 +21,19 @@ const description =
 export const metadata: Metadata = {
   metadataBase: new URL("https://aman-singh.dev"),
   title: {
-    default: `${profile.name} · Backend Engineer`,
+    default: `${profile.name} · Software Developer`,
     template: `%s · ${profile.name}`,
   },
   description,
   keywords: [
     "Aman Singh",
-    "Backend Engineer",
+    "Software Developer",
     "Go Developer",
     "Distributed Systems",
     "FastAPI",
   ],
   openGraph: {
-    title: `${profile.name} · Backend Engineer`,
+    title: `${profile.name} · Software Developer`,
     description,
     url: "https://aman-singh.dev",
     type: "website",
