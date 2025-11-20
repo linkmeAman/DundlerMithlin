@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { profile } from "@/data/profile";
 import { experience } from "@/data/experience";
 import { projects } from "@/data/projects";
@@ -30,7 +29,7 @@ export default function Home() {
       <Section id="experience">
         <SectionHeader
           eyebrow="Experience"
-          title="TickleRight Eduventures — Backend Engineer"
+          title="TickleRight Eduventures — Software Developer"
           description="Owning distributed microservices, incident response, and automation that powers a 35,000+ user SaaS platform."
         />
         <ExperienceTimeline entries={experience} />
@@ -154,7 +153,7 @@ function Hero() {
   return (
     <section className="relative overflow-hidden border-b border-white/5 bg-[radial-gradient(circle_at_top,_rgba(14,165,233,0.35),_transparent_55%)]">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-center">
+        <div className="flex flex-col gap-12">
           <Reveal className="space-y-6">
             <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300">
               <span className="h-2 w-2 rounded-full bg-emerald-400" />
@@ -179,7 +178,7 @@ function Hero() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 rounded-full bg-cyan-500/90 px-6 py-3 text-base font-semibold text-slate-950 transition hover:bg-cyan-400"
               >
-                View Resume (PDF)
+                View Resume
               </Link>
               <Link
                 href="/#contact"
@@ -187,25 +186,6 @@ function Hero() {
               >
                 Contact
               </Link>
-            </div>
-          </Reveal>
-          <Reveal delay={0.1} className="flex justify-center lg:justify-end">
-            <div className="relative">
-              <div className="absolute inset-0 blur-3xl" aria-hidden>
-                <div className="h-full w-full rounded-[32px] bg-gradient-to-br from-cyan-500/20 to-sky-400/10" />
-              </div>
-              <div className="relative rounded-[32px] border border-white/10 bg-white/5 p-3 shadow-[0_30px_80px_rgba(8,145,178,0.35)]">
-                <div className="overflow-hidden rounded-[24px] border border-white/10">
-                  <Image
-                    src={profile.photo.src}
-                    alt={profile.photo.alt}
-                    width={320}
-                    height={320}
-                    className="h-auto w-[min(320px,80vw)] object-cover"
-                    priority
-                  />
-                </div>
-              </div>
             </div>
           </Reveal>
         </div>

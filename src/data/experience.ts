@@ -15,7 +15,7 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
   {
-    role: "Backend Engineer",
+    role: "Software Developer",
     company: "TickleRight Eduventures",
     companyDetail: "SaaS Ed-Tech Platform",
     location: "Mumbai, India (Remote)",

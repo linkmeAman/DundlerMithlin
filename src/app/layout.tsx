@@ -21,19 +21,19 @@ const description =
 export const metadata: Metadata = {
   metadataBase: new URL("https://aman-singh.dev"),
   title: {
-    default: `${profile.name} · Backend Engineer`,
+    default: `${profile.name} · Software Developer`,
     template: `%s · ${profile.name}`,
   },
   description,
   keywords: [
     "Aman Singh",
-    "Backend Engineer",
+    "Software Developer",
     "Go Developer",
     "Distributed Systems",
     "FastAPI",
   ],
   openGraph: {
-    title: `${profile.name} · Backend Engineer`,
+    title: `${profile.name} · Software Developer`,
     description,
     url: "https://aman-singh.dev",
     type: "website",
@@ -53,9 +53,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-[#020617] text-slate-100 antialiased`}
+        suppressHydrationWarning
       >
         <div className="relative min-h-screen overflow-hidden">
           <div className="pointer-events-none absolute inset-x-0 top-[-15rem] mx-auto h-[400px] max-w-4xl blur-[140px]" />

@@ -40,6 +40,7 @@ export type Profile = {
     src: string;
     alt: string;
   };
+  displayYear?: string;
 };
 
 const email = "amans27203@gmail.com";
@@ -47,15 +48,15 @@ const email = "amans27203@gmail.com";
 export const profile: Profile = {
   name: "Aman Singh",
   title:
-    "Backend Engineer — Go · PHP · Python · MySQL · Redis · Distributed Systems",
+    "Software Developer — Go · PHP · Python · MySQL · Redis · Distributed Systems",
   heroTagline:
     "I design low-latency APIs, resilient data pipelines, and pragmatic automation for growth-stage teams.",
   lead:
     "Results-driven backend engineer with 2+ years architecting microservices that stay fast, observable, and cost-aware.",
   summary: [
     "I obsess over measurable performance. Whether it is taking a 330 ms p95 query down to 115 ms with a disciplined cache-aside layer, or tuning a 500 GB+ MySQL cluster so two million API calls per day stay predictable, I build systems that keep moving when customer demand surges.",
-    "Most of my time is split between Go microservices, Python/FastAPI surfaces, and pragmatic PHP services that still power core workflows. I lean on Redis, strong monitoring, and an automation-first mindset to remove manual work—recently cutting repetitive operations effort by 80% while lifting retention double digits.",
-    "I love partnering with product and operations leaders to ship features that pay for themselves: distributed messaging platforms, BI visibility, scheduling automations, and calm incident playbooks that keep uptime above 99.9% even as headcount stays lean.",
+    "My time is split between Go microservices, Python/FastAPI surfaces, and pragmatic PHP services. Redis, observability, and automation-first thinking remove repetitive tasks—an 80% reduction in ops effort and double-digit retention gains came from those habits.",
+    "I partner with product and operations leaders to ship features that pay for themselves: distributed messaging platforms, BI visibility, scheduling workflows, and calm incident playbooks that keep uptime above 99.9% even as headcount stays lean.",
   ],
   stats: [
     {
@@ -125,7 +126,8 @@ export const profile: Profile = {
     ],
   },
   photo: {
-    src: "/profile-photo.jpeg",
+    src: "/profile_image.jpeg",
     alt: "Aman Singh portrait",
   },
+  displayYear: "2025",
 };
